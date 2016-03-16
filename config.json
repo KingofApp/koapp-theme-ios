@@ -1,0 +1,62 @@
+{
+  "name": "iOS",
+  "identifier": "koapp-theme-ios",
+  "description": {
+    "en-US" : "",
+    "es-ES" : "Plantilla basada en las guías de diseño de iOS"
+  },
+  "version": "1.0",
+  "author": "King of App",
+  "category": [
+    "ios-design"
+  ],
+  "price": 0,
+  "platforms": [
+    "ios"
+  ],
+  "showOn": {
+    "market": true
+  },
+  "images" : {
+    "list" : "images/list.png",
+    "screenshots" : [
+      "images/screenshot01.png",
+      "images/screenshot02.png"
+    ],
+    "popover" : "images/popover.png",
+    "banner" : "images/banner.png"
+  },
+  "defaultConfig": {
+    "colors": {
+      "primaryTextColor": "#212121",
+      "primaryBackgroundColor": "#ffffff",
+      "secondaryTextColor": "#757575",
+      "disabledTextColor": "#bdbdbd",
+      "dividerColor": "#e0e0e0",
+      "primaryColor": "#007aff",
+      "lightPrimaryColor": "rgba(0, 122, 255, 0.15)",
+      "darkPrimaryColor": "#0054b0",
+      "accentColor": "#ff4081",
+      "lightAccentColor": "#ff4081",
+      "darkAccentColor": "#ff4081",
+      "errorColor": "#dd2c00",
+      "backgroundColor": "#ffffff"
+    },
+    "images": {
+      "background": ""
+    },
+    "fonts": {
+      "primaryFontFamily": {
+        "name": "",
+        "url": ""
+      },
+      "titleFontFamily": {
+        "name": "",
+        "url": ""
+      }
+    },
+    "menu": "polymermenu"
+  },
+  "subscription": false,
+  "main": "themes/koapp-theme-ios/koapp-theme-ios.html"
+}
