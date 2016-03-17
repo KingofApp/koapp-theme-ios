@@ -18,13 +18,12 @@
     "market": true
   },
   "images" : {
-    "list" : "images/list.png",
+    "list" : "themes/koapp-theme-ios/images/list.png",
     "screenshots" : [
-      "images/screenshot01.png",
-      "images/screenshot02.png"
+      "themes/koapp-theme-ios/images/screenshot01.png"
     ],
-    "popover" : "images/popover.png",
-    "banner" : "images/banner.png"
+    "popover" : "themes/koapp-theme-ios/images/popover.png",
+    "banner" : "themes/koapp-theme-ios/images/banner.png"
   },
   "defaultConfig": {
     "colors": {
