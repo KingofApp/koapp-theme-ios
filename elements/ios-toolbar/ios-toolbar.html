@@ -7,25 +7,32 @@
   <template>
     <style>
       :host {
-        background: var(--toolbar-background, --primary-color);
-          -moz-box-sizing: border-box;
-        box-sizing: border-box;
-        color: var(--toolbar-color, #ffffff);
-        display: block;
-        font-family: var(--toolbar-font-family, --title-font-family);
-        height: var(--toolbar-height, 64px);
+        --calculated-toolbar-height: var(--toolbar-height, 52px);
+        --calculated-sm-toolbar-height: var(--toolbar-sm-height, 44px);
+
         position: relative;
+
+        display: block;
+
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        height: var(--calculated-toolbar-height);
+
+        color: var(--toolbar-color, --primary-color);
+        background: var(--toolbar-background, #f7f7f9);
+
+        font-family: var(--toolbar-font-family, --title-font-family);
 
         @apply(--toolbar);
       }
 
       :host(.medium-tall) {
-        height: calc(var(--toolbar-height, 64px) * 2);
+        height: calc(var(--calculated-toolbar-height) * 2);
         @apply(--toolbar-medium);
       }
 
       :host(.tall) {
-        height: calc(var(--toolbar-height, 64px) * 3);
+        height: calc(var(--calculated-toolbar-height) * 3);
         @apply(--toolbar-tall);
       }
 
@@ -33,8 +40,8 @@
         @apply(--layout-horizontal);
         @apply(--layout-center);
 
-        height: var(--toolbar-height, 64px);
-        padding: 0 16px;
+        height: var(--calculated-toolbar-height);
+        padding: 0 8px;
         pointer-events: none;
         position: relative;
 
@@ -46,19 +53,19 @@
        */
       @media (max-width: 600px) {
         :host {
-          height: var(--toolbar-sm-height, 56px);
+          height: var(--calculated-sm-toolbar-height);
         }
 
         :host(.medium-tall) {
-          height: calc(var(--toolbar-sm-height, 56px) * 2);
+          height: calc(var(--calculated-sm-toolbar-height) * 2);
         }
 
         :host(.tall) {
-          height: calc(var(--toolbar-sm-height, 56px) * 3);
+          height: calc(var(--calculated-sm-toolbar-height) * 3);
         }
 
         .toolbar-tools {
-          height: var(--toolbar-sm-height, 56px);
+          height: var(--calculated-sm-toolbar-height);
         }
       }
 
@@ -101,7 +108,7 @@
         @apply(--layout-flex);
 
         font-family: var(--title-font-family);
-        font-size: 20px;
+        font-size: 17px;
         font-weight: 400;
         line-height: 3;
         overflow: hidden;
@@ -117,7 +124,7 @@
        * Work in progress.
        */
       .toolbar-tools > ::content ios-icon-button[icon=menu] {
-        margin-right: 24px;
+        margin-right: 5px;
       }
 
       .toolbar-tools > ::content > .title,
