@@ -11,12 +11,39 @@
         @apply(--layout-center-justified);
         @apply(--layout-flex-auto);
 
-        cursor: pointer;
         overflow: hidden;
-        padding: 0 12px;
-        position: relative;
+
+        box-sizing: border-box;
+        height: 29px;
+        margin: 0;
+        padding: 0 10px;
+
+        cursor: pointer;
+        white-space: nowrap;
+        text-decoration: none;
+        text-overflow: ellipsis;
+
+        color: var(--tab-color, --primary-color);
+        border-top: 1px solid var(--tab-color, --primary-color);
+        border-bottom: 1px solid var(--tab-color, --primary-color);
+        border-left: 1px solid var(--tab-color, --primary-color);
+        background: none;
+
+        font-family: inherit;
+        font-size: 14px;
 
         @apply(--tab);
+      }
+
+      :host(:first-child) {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+      }
+
+      :host(:last-child) {
+        border-right: 1px solid var(tab-color, --primary-color);
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
       }
 
       :host(:focus) {
@@ -33,11 +60,16 @@
         @apply(--layout-flex-auto);
 
         height: 100%;
-          -webkit-transform: translateZ(0);
+        -webkit-transform: translateZ(0);
         transform: translateZ(0);
         transition: opacity 0.1s cubic-bezier(0.4, 0.0, 1, 1);
 
         @apply(--tab-content);
+      }
+
+      :host(.iron-selected) {
+        color: var(--tab-color, white);
+        background: var(--tab-background-color, --primary-color);
       }
 
       :host(:not(.iron-selected)) > .tab-content {
