@@ -6,17 +6,24 @@
   <template>
     <style>
       :host {
-        box-sizing: border-box;
-        cursor: pointer;
         display: inline-block;
-        height: 40px;
-        outline: none;
-        padding: 8px;
-          -moz-user-select: none;
-          -ms-user-select: none;
-          -webkit-user-select: none;
-        user-select: none;
+
+        box-sizing: border-box;
         width: 40px;
+        height: 40px;
+        padding: 8px;
+
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+        outline: none;
+
+        /* NOTE: Both values are needed, since some phones require the value to be `transparent`. */
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        -webkit-tap-highlight-color: transparent;
 
         @apply(--icon-button);
       }
