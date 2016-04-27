@@ -7,11 +7,9 @@
     <style>
       :host {
         -webkit-overflow-scrolling: touch;
-        background: var(--dialog-background-color, --primary-background-color);
-        box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
-                    0  6px 30px 5px rgba(0, 0, 0, 0.12),
-                    0  8px 10px -5px rgba(0, 0, 0, 0.4);
+        background: var(--dialog-background-color, rgba(245, 245, 245, .95));
         color: var(--dialog-color, --primary-text-color);
+        border-radius: 13px;
         display: block;
         margin: 24px 40px;
 
@@ -45,11 +43,29 @@
       :host > ::content .buttons {
         color: var(--dialog-button-color, --primary-color);
         margin: 0;
-        padding: 8px 8px 8px 24px;
+        padding: 0;
+        border-top: 1px solid var(--divider-color);
         position: relative;
 
         @apply(--layout-horizontal);
         @apply(--layout-end-justified);
+      }
+
+      :host > ::content .buttons ios-button {
+        @apply(--layout-flex);
+
+        height: 44px;
+
+        border: none;
+        border-radius: 0;
+
+        font-size: 17px;
+        font-weight: bold;
+        line-height: 43px;
+      }
+
+      :host > ::content .buttons ios-button:nth-child(n+2) {
+        border-left: 1px solid var(--divider-color);
       }
     </style>
 
