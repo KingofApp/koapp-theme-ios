@@ -7,6 +7,10 @@
   <template>
     <style>
       :host {
+        @apply(--layout-vertical);
+      }
+
+      .content {
         @apply(--layout-horizontal);
         @apply(--layout-center);
 
@@ -16,14 +20,15 @@
         line-height: 24px;
         min-height: var(--item-min-height, 48px);
         position: relative;
-        border-bottom: 1px solid var(--divider-color);
         margin: 0 16px;
 
         @apply(--item);
       }
 
-      :host(:first-child) {
-        border-top: 1px solid var(--divider-color);
+      .underline {
+        margin: 0 16px;
+
+        border-bottom: 1px solid var(--divider-color);
       }
 
       :host([hidden]) {
@@ -70,10 +75,13 @@
     </style>
 
     <!-- write your template here -->
-    <div id="contentIcon" class="content-icon" hidden>
-      <content select="[item-icon]"></content>
+    <div class="content">
+      <div id="contentIcon" class="content-icon" hidden>
+        <content select="[item-icon]"></content>
+      </div>
+      <content></content>
     </div>
-    <content></content>
+    <div class="underline"></div>
     <!-- end template -->
   </template>
 
