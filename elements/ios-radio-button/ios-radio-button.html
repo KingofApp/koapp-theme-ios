@@ -6,9 +6,12 @@
   <template>
     <style>
       :host {
-        display: inline-block;
-        white-space: nowrap;
+        @apply(--layout-horizontal);
+
+        padding: .8em 0;
+
         cursor: pointer;
+        white-space: nowrap;
       }
 
       :host(:focus) {
@@ -35,7 +38,6 @@
         border: solid 2px;
         background-color: var(--radio-button-unchecked-background-color, transparent);
         border-color: var(--radio-button-unchecked-color, --primary-text-color);
-        transition: border-color 0.28s;
       }
 
       #onRadio {
@@ -50,8 +52,6 @@
         background-color: var(--radio-button-checked-color, --primary-color);
         -webkit-transform: scale(0);
         transform: scale(0);
-        transition: -webkit-transform ease 0.28s;
-        transition: transform ease 0.28s;
       }
 
       :host([checked]) #offRadio {
@@ -64,17 +64,19 @@
       }
 
       #radioLabel {
+        @apply(--layout-flex);
+
         position: relative;
-        display: inline-block;
+        text-align: left;
         vertical-align: middle;
-        margin-left: var(--radio-button-label-spacing, 10px);
+        margin-right: var(--radio-button-label-spacing, 10px);
         white-space: normal;
         color: var(--radio-button-label-color, --primary-text-color);
       }
 
       :host-context([dir="rtl"]) #radioLabel {
-        margin-left: 0px;
-        margin-right: var(--radio-button-label-spacing, 10px);
+        margin-right: 0px;
+        margin-left: var(--radio-button-label-spacing, 10px);
       }
 
       #radioLabel[hidden] {
@@ -99,12 +101,12 @@
     </style>
 
     <!-- write your template here -->
+    <div id="radioLabel"><content></content></div>
+
     <div id="radioContainer">
       <div id="offRadio"></div>
       <div id="onRadio"></div>
     </div>
-
-    <div id="radioLabel"><content></content></div>
     <!-- end template -->
   </template>
 
