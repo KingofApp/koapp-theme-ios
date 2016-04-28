@@ -1,0 +1,94 @@
+<link rel="import" href="../../../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../../../bower_components/koa-behaviors/koa-button-behavior.html">
+<link rel="import" href="../../styles/default-theme.html">
+
+<dom-module id="ios-button">
+  <template>
+    <style>
+      :host {
+        position: relative;
+
+        display: block;
+        overflow: hidden;
+
+        box-sizing: border-box;
+        height: 29px;
+        margin: 0;
+        padding: 0 10px;
+
+        cursor: pointer;
+        text-align: center;
+        white-space: nowrap;
+        text-decoration: none;
+        text-overflow: ellipsis;
+
+        color: var(--button-color, --primary-color);
+        border: 1px solid var(--button-color, --primary-color);
+        border-radius: 5px;
+        background: none;
+
+        font-family: inherit;
+        font-size: 14px;
+        line-height: 27px;
+
+        appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        -webkit-appearance: none;
+
+        @apply(--button);
+      }
+
+      :host([disabled]) {
+        pointer-events: none;
+
+        opacity: 0.55;
+
+        @apply(--button-disabled);
+      }
+
+      :host([pressed]) {
+        background-color: var(--button-background-color-pressed, --light-primary-color);
+      }
+
+      :host([big]) {
+        height: 44px;
+
+        font-size: 17px;
+        line-height: 42px;
+      }
+
+      :host(:not([big]):not([link]).keyboard-focus) {
+        font-weight: bold;
+
+        @apply(--button-keyboard-focus);
+      }
+
+      :host([big].keyboard-focus) {
+        font-weight: bold;
+
+        @apply(--button-big-keyboard-focus);
+      }
+
+      :host([link].keyboard-focus) {
+        font-weight: bold;
+
+        @apply(--button-link-keyboard-focus);
+      }
+    </style>
+
+    <!-- write your template here -->
+    <content></content>
+    <!-- end template -->
+  </template>
+
+  <script>
+    Polymer({
+      is: 'ios-button',
+
+      behaviors: [
+        Polymer.KoaButtonBehavior
+      ]
+    });
+  </script>
+</dom-module>

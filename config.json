@@ -31,7 +31,7 @@
       "primaryBackgroundColor": "#ffffff",
       "secondaryTextColor": "#757575",
       "disabledTextColor": "#bdbdbd",
-      "dividerColor": "#e0e0e0",
+      "dividerColor": "#c8c8c8",
       "primaryColor": "#007aff",
       "lightPrimaryColor": "rgba(0, 122, 255, 0.15)",
       "darkPrimaryColor": "#0054b0",
@@ -39,7 +39,7 @@
       "lightAccentColor": "#ff4081",
       "darkAccentColor": "#ff4081",
       "errorColor": "#dd2c00",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#efeff4"
     },
     "images": {
       "background": ""
