@@ -32,9 +32,22 @@ This code may only be used under the MIT license.
 
     --primary-font-family: 'Roboto';
     --title-font-family: 'Roboto';
+
+    --margin: 16px;
   }
 
   body {
     background-color: var(--primary-color);
+  }
+
+  form {
+    margin: var(--margin);
+  }
+
+  ios-card {
+    --card: {
+      margin: var(--margin);
+      width: calc(100% - var(--margin) * 2)
+    };
   }
 </style>
