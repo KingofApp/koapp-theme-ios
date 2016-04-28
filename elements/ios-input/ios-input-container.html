@@ -7,7 +7,8 @@
   <template>
     <style>
       :host {
-        display: block;
+        @apply(--layout-horizontal);
+
         padding: 8px 0;
 
         @apply(--input-container);
@@ -24,57 +25,19 @@
         @apply(--input-container-disabled);
       }
 
-      .underline {
-        position: relative;
-      }
-
-      .focused-line {
-        @apply(--layout-fit);
-
-        background: var(--input-container-focus-color, --primary-color);
-        height: 2px;
-          -webkit-transform: scale3d(0, 1, 1);
-        transform: scale3d(0, 1, 1);
-          -webkit-transform-origin: center center;
-        transform-origin: center center;
-
-        @apply(--input-container-underline-focus);
-      }
-
-      .underline.is-highlighted .focused-line {
-          -webkit-transform: none;
-        transform: none;
-      }
-
-      .underline.is-invalid .focused-line {
-        background: var(--input-container-invalid-color, --error-color);
-          -webkit-transform: none;
-        transform: none;
-      }
-
-      .unfocused-line {
-        @apply(--layout-fit);
-
-        background: var(--input-container-color, --secondary-text-color);
-        height: 1px;
-
-        @apply(--input-container-underline);
-      }
-
-      :host([disabled]) .unfocused-line {
-        background: transparent;
-        border-bottom: 1px dashed;
-        border-color: var(--input-container-color, --secondary-text-color);
-
-        @apply(--input-container-underline-disabled);
-      }
-
       ::content label {
-        color: var(--input-container-color, --secondary-text-color);
-        font: inherit;
-        width: 100%;
+        color: var(--input-container-color, #000000);
+        font-size: 16px;
 
         @apply(--input-container-label);
+      }
+
+      .input-label {
+        width: 35%;
+      }
+
+      .input-container {
+        @apply(--layout-flex);
       }
 
       .input-content {
@@ -150,25 +113,24 @@
     </style>
 
     <!-- write your template here -->
-    <content select="label"></content>
+    <div class="input-label">
+      <content select="label"></content>
+    </div>
 
-    <div class="input-content">
-      <content select="[prefix]" id="prefix"></content>
+    <div class="input-container">
+      <div class="input-content">
+        <content select="[prefix]" id="prefix"></content>
 
-      <div class="input-container" id="inputContainer">
-        <content select=":not(label):not([add-on]):not([prefix]):not([suffix])"></content>
+        <div class="input-container" id="inputContainer">
+          <content select=":not(label):not([add-on]):not([prefix]):not([suffix])"></content>
+        </div>
+
+        <content select="[suffix]"></content>
       </div>
 
-      <content select="[suffix]"></content>
-    </div>
-
-    <div class$="[[_computeUnderlineClass(focused, invalid)]]">
-      <div class="unfocused-line"></div>
-      <div class="focused-line"></div>
-    </div>
-
-    <div class$="[[_computeAddOnContentClass(focused, invalid)]]">
-      <content id="addOnContent" select="[add-on]"></content>
+      <div class$="[[_computeAddOnContentClass(focused, invalid)]]">
+        <content id="addOnContent" select="[add-on]"></content>
+      </div>
     </div>
     <!-- end template -->
   </template>
