@@ -9,8 +9,10 @@
       :host {
         @apply(--layout-horizontal);
 
-        padding: 8px 0;
+        padding: 10px 15px 10px 0;
         border-bottom: 1px solid var(--divider-color);
+        background-color: var(--primary-background-color);
+        margin-left: 15px;
 
         @apply(--input-container);
       }
@@ -34,6 +36,9 @@
       }
 
       .input-label {
+        @apply(--layout);
+        @apply(--layout-center);
+
         width: 35%;
       }
 
