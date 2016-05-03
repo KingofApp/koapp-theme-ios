@@ -7,15 +7,13 @@
     <style>
       :host {
         color: var(--input-container-invalid-color, --error-color);
-        display: inline-block;
-        left: 0;
-        position: absolute;
-        right: 0;
         visibility: hidden;
+        display: none;
       }
 
       :host([invalid]) {
         visibility: visible;
+        display: inline-block;
       }
     </style>
 
