@@ -1,6 +1,6 @@
 {
   "name": "koapp-theme-ios",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Plantilla basada en las guías de diseño de iOS",
   "directories": {
     "test": "test"
@@ -17,7 +17,7 @@
     "gulp-debug": "^2.1.2",
     "gulp-eslint": "^3.0.1",
     "gulp-filesize": "^0.0.6",
-    "gulp-jsdoc3": "^1.0.0",
+    "gulp-jsdoc3": "^1.0.1",
     "gulp-if": "^2.0.1",
     "gulp-json-transform": "^0.4.2",
     "gulp-notify": "^2.2.0",
