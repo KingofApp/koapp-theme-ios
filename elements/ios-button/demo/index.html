@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+
+    <title>ios-button demo</title>
+
+    <script src="../../../../../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../../../../../bower_components/iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../../../../bower_components/iron-icons/iron-icons.html">
+    <link rel="import" href="../../../../../bower_components/paper-styles/color.html">
+    <link rel="import" href="../ios-button.html">
+
+    <style is="custom-style" include="demo-pages-shared-styles">
+      .vertical-section-container {
+        max-width: 650px;
+      }
+
+      .horizontal-section {
+        text-align: center;
+      }
+
+      ios-button {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+
+      ios-button.custom:hover {
+        background-color: var(--paper-indigo-100);
+      }
+
+      ios-button.pink {
+        color: var(--paper-pink-a200);
+      }
+
+      ios-button.indigo {
+        background-color: var(--paper-indigo-500);
+        color: white;
+      }
+
+      ios-button.green {
+        background-color: var(--paper-green-500);
+        color: white;
+      }
+
+      ios-button.green[active] {
+        background-color: var(--paper-red-500);
+      }
+
+      ios-button.disabled {
+        color: white;
+      }
+
+      koa-icon {
+        --iron-icon-width: 20px;
+        --iron-icon-height: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="vertical-section-container centered">
+      <h3>Buttons can be standar, big, link, toggleable, or disabled</h3>
+      <div class="horizontal-section">
+        <ios-button>standar</ios-button>
+        <ios-button big>big</ios-button>
+        <ios-button link>link</ios-button>
+        <ios-button toggles>toggles</ios-button>
+        <ios-button disabled>disabled</ios-button>
+      </div>
+
+      <h3>Buttons can have icons</h3>
+      <div class="horizontal-section">
+        <ios-button><koa-icon icon="check"></koa-icon>standar</ios-button>
+        <ios-button big><koa-icon icon="file-download"></koa-icon>big</ios-button>
+        <ios-button link><koa-icon icon="file-download"></koa-icon>link</ios-button>
+        <ios-button toggles><koa-icon icon="favorite"></koa-icon>toggles</ios-button>
+        <ios-button disabled><koa-icon icon="block"></koa-icon>disabled</ios-button>
+      </div>
+
+      <h3>Buttons can be styled using custom properties</h3>
+      <div class="horizontal-section">
+        <ios-button class="custom pink">standar</ios-button>
+        <ios-button big class="custom indigo">big</ios-button>
+        <ios-button link class="custom">link</ios-button>
+        <ios-button toggles class="custom green">toggles</ios-button>
+        <ios-button disabled class="custom disabled">disabled</ios-button>
+      </div>
+    </div>
+  </body>
+</html>

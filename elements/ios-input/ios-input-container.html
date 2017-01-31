@@ -1,0 +1,153 @@
+<link rel="import" href="../../../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../../../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../../../../bower_components/koa-behaviors/koa-input-behavior.html">
+<link rel="import" href="../../styles/default-theme.html">
+
+<dom-module id="ios-input-container">
+  <template>
+    <style>
+      :host {
+        @apply(--layout-horizontal);
+
+        padding: 10px 15px;
+        border-bottom: 1px solid var(--divider-color);
+        background-color: var(--primary-background-color);
+
+        @apply(--input-container);
+      }
+
+      :host[inline] {
+        display: inline-block;
+      }
+
+      :host([disabled]) {
+        opacity: 0.33;
+        pointer-events: none;
+
+        @apply(--input-container-disabled);
+      }
+
+      ::content label {
+        color: var(--input-container-color, #000000);
+        font-size: 16px;
+
+        @apply(--input-container-label);
+      }
+
+      .input-label {
+        @apply(--layout);
+        @apply(--layout-center);
+
+        width: 35%;
+      }
+
+      .input-container {
+        @apply(--layout-vertical);
+        @apply(--layout-flex);
+      }
+
+      .input-content {
+        @apply(--layout-horizontal);
+        @apply(--layout-end);
+
+        position: relative;
+      }
+
+      .input-container {
+        @apply(--layout-flex-auto);
+        @apply(--layout-relative);
+      }
+
+      .input-content ::content input,
+      .input-content ::content textarea,
+      .input-content ::content iron-autogrow-textarea,
+      ::content [prefix],
+      ::content [suffix] {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+      }
+
+      .input-content ::content input,
+      .input-content ::content textarea,
+      .input-content ::content iron-autogrow-textarea {
+          -webkit-appearance: none;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        color: var(--input-container-input-color, --primary-text-color);
+        outline: none;
+        padding: 0;
+        position: relative; /* to make a stacking context */
+        text-align: inherit;
+        width: 100%;
+        max-width: 100%;
+
+        @apply(--input-container-input);
+      }
+
+      ::content [prefix] {
+        @apply(--layout-flex-none);
+        @apply(--input-prefix);
+      }
+
+      ::content [suffix] {
+        @apply(--layout-flex-none);
+        @apply(--input-suffix);
+      }
+
+      /* Firefox sets a min-width on the input, which can cause layout issues */
+      .input-content ::content input {
+        min-width: 0;
+      }
+
+      .input-content ::content textarea {
+        resize: none;
+      }
+
+      .add-on-content {
+        display: block;
+      }
+
+      .add-on-content.is-invalid ::content * {
+        color: var(--input-container-invalid-color, --error-color);
+      }
+
+      .add-on-content.is-highlighted ::content * {
+        color: var(--input-container-focus-color, --primary-color);
+      }
+    </style>
+
+    <!-- write your template here -->
+    <div class="input-label">
+      <content select="label"></content>
+    </div>
+
+    <div class="input-container">
+      <div class="input-content">
+        <content select="[prefix]" id="prefix"></content>
+
+        <div class="input-container" id="inputContainer">
+          <content select=":not(label):not([add-on]):not([prefix]):not([suffix])"></content>
+        </div>
+
+        <content select="[suffix]"></content>
+      </div>
+
+      <div class$="[[_computeAddOnContentClass(focused, invalid)]]">
+        <content id="addOnContent" select="[add-on]"></content>
+      </div>
+    </div>
+    <!-- end template -->
+  </template>
+
+  <script>
+    Polymer({
+      is: 'ios-input-container',
+
+      behaviors: [
+        Polymer.KoaInputContainerBehavior
+      ]
+    });
+  </script>
+</dom-module>

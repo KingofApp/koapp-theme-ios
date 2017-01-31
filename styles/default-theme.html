@@ -7,8 +7,6 @@ This code may only be used under the MIT license.
 <style is="custom-style">
   /*
    Polymer includes a shim for CSS Custom Properties that we can use for application theming.
-   Below, you'll find the default palette for the Polymer Starter Kit layout. Feel free to play
-   with changing the colors used or generate your own palette of colours at MaterialPalette.com.
    See https://www.polymer-project.org/1.0/docs/devguide/styling.html#xscope-styling-details
    for further information on custom CSS properties.
    */
@@ -20,15 +18,36 @@ This code may only be used under the MIT license.
     --primary-background-color: #ffffff;
     --secondary-text-color: #757575;
     --disabled-text-color: #bdbdbd;
-    --divider-color: #e0e0e0;
+    --divider-color: #e4e3e6;
     --primary-color: #007aff;
     --light-primary-color: rgba(0, 122, 255, 0.15);
     --dark-primary-color: #0054b0;
     --accent-color: #ff4081;
     --light-accent-color: #ff4081;
     --dark-accent-color: #ff4081;
+    --error-color: #dd2c00;
 
-    --background-color: #ffffff;
+    --background-color: #efeff4;
+    --background-image: none;
+
+    --primary-font-family: 'Roboto';
+    --title-font-family: 'Roboto';
+
+    --margin: 10px;
   }
 
+  body {
+    background-color: var(--primary-color);
+  }
+
+  form ios-button {
+    margin: var(--margin);
+  }
+
+  ios-card {
+    --card: {
+      margin: var(--margin);
+      width: calc(100% - var(--margin) * 2)
+    };
+  }
 </style>

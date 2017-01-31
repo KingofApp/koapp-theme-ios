@@ -1,0 +1,34 @@
+<link rel="import" href="../../../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../../../bower_components/koa-behaviors/koa-input-behavior.html">
+<link rel="import" href="../../styles/default-theme.html">
+
+<dom-module id="ios-input-error">
+  <template>
+    <style>
+      :host {
+        color: var(--input-container-invalid-color, --error-color);
+        visibility: hidden;
+        display: none;
+      }
+
+      :host([invalid]) {
+        visibility: visible;
+        display: inline-block;
+      }
+    </style>
+
+    <!-- write your template here -->
+    <content></content>
+    <!-- end template -->
+  </template>
+
+  <script>
+    Polymer({
+      is: 'ios-input-error',
+
+      behaviors: [
+        Polymer.KoaInputErrorBehavior
+      ]
+    });
+  </script>
+</dom-module>

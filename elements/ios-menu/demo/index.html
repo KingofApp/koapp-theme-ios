@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+
+    <title>ios-menu demo</title>
+
+    <script src="../../../../../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../../../../../bower_components/paper-styles/demo-pages.html">
+    <link rel="import" href="../../ios-item/ios-item.html">
+    <link rel="import" href="../ios-menu.html">
+    <link rel="import" href="../ios-submenu.html">
+
+    <style is="custom-style">
+      .horizontal-section {
+        padding: 0 !important;
+      }
+
+      .avatar {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        overflow: hidden;
+        background: #ccc;
+      }
+
+      ios-item {
+        --item: {
+          cursor: pointer;
+        };
+      }
+
+      .sublist ios-item {
+        padding-left: 30px;
+      }
+
+      .sublist2 ios-item {
+        padding-left: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="horizontal-section-container">
+      <div>
+        <h4>Standard</h4>
+        <div class="horizontal-section">
+          <ios-menu>
+            <ios-item>Inbox</ios-item>
+            <ios-item>Starred</ios-item>
+            <ios-item>Sent mail</ios-item>
+            <ios-item>Drafts</ios-item>
+          </ios-menu>
+        </div>
+      </div>
+
+      <div>
+        <h4>Pre-selected</h4>
+        <div class="horizontal-section">
+          <ios-menu selected="0">
+            <ios-item>Inbox</ios-item>
+            <ios-item disabled>Starred</ios-item>
+            <ios-item>Sent mail</ios-item>
+            <ios-item>Drafts</ios-item>
+          </ios-menu>
+        </div>
+      </div>
+
+      <div>
+        <h4>Multi-select</h4>
+        <div class="horizontal-section">
+          <ios-menu multi>
+            <ios-item>Bold</ios-item>
+            <ios-item>Italic</ios-item>
+            <ios-item>Underline</ios-item>
+            <ios-item>Strikethrough</ios-item>
+          </ios-menu>
+        </div>
+      </div>
+
+      <div>
+        <h4>Sub-menu</h4>
+        <div class="horizontal-section">
+          <ios-menu attr-for-item-title="label" multi>
+            <ios-submenu label="ios-menu">
+              <ios-item class="menu-trigger">ios-menu</ios-item>
+              <ios-menu class="menu-content sublist" multi>
+                <ios-submenu label="Properties">
+                  <ios-item class="menu-trigger">Properties</ios-item>
+                  <ios-menu class="menu-content sublist2">
+                    <ios-item>focusedItem</ios-item>
+                    <ios-item>attrForItemTitle</ios-item>
+                  </ios-menu>
+                </ios-submenu>
+                <ios-submenu label="Methods">
+                  <ios-item class="menu-trigger">Methods</ios-item>
+                  <ios-menu class="menu-content sublist2">
+                    <ios-item>select(value)</ios-item>
+                  </ios-menu>
+                </ios-submenu>
+            </ios-menu>
+          </ios-submenu>
+
+          <ios-submenu label="ios-submenu">
+            <ios-item class="menu-trigger">ios-submenu</ios-item>
+            <ios-menu class="menu-content sublist">
+              <ios-submenu label="Properties">
+                <ios-item class="menu-trigger">Properties</ios-item>
+                <ios-menu class="menu-content sublist2">
+                  <ios-item>opened</ios-item>
+                </ios-menu>
+                </ios-submenu>
+                <ios-submenu label="Methods">
+                  <ios-item class="menu-trigger">Methods</ios-item>
+                  <ios-menu class="menu-content sublist2">
+                    <ios-item>open()</ios-item>
+                    <ios-item>close()</ios-item>
+                    <ios-item>toggle()</ios-item>
+                  </ios-menu>
+              </ios-submenu>
+            </ios-menu>
+          </ios-submenu>
+
+            <ios-submenu label="Unavailable" disabled>
+              <ios-item class="menu-trigger">Unavailable</ios-item>
+              <ios-menu class="menu-content sublist">
+                <ios-item>Unavailable 1</ios-item>
+                <ios-item>Unavailable 2</ios-item>
+              </ios-menu>
+            </ios-submenu>
+          </ios-menu>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -5,7 +5,7 @@
     "en-US" : "",
     "es-ES" : "Plantilla basada en las guías de diseño de iOS"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "King of App",
   "category": [
     "ios-design"
@@ -31,7 +31,7 @@
       "primaryBackgroundColor": "#ffffff",
       "secondaryTextColor": "#757575",
       "disabledTextColor": "#bdbdbd",
-      "dividerColor": "#e0e0e0",
+      "dividerColor": "#e4e3e6",
       "primaryColor": "#007aff",
       "lightPrimaryColor": "rgba(0, 122, 255, 0.15)",
       "darkPrimaryColor": "#0054b0",
@@ -39,7 +39,7 @@
       "lightAccentColor": "#ff4081",
       "darkAccentColor": "#ff4081",
       "errorColor": "#dd2c00",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#efeff4"
     },
     "images": {
       "background": ""
